@@ -1,7 +1,21 @@
 # nodejs-meme-generator
 Nodejs promise-based meme generator, it takes an image as url and top/bottom text to generate meme as Buffer
 
-## example
+## Installation
+```
+$ npm install canvas
+```
+```
+$ yarn add canvas
+```
+
+## Requirements
+Unless previously installed you'll need Cairo and Pango
+```
+brew install pkg-config cairo pango libpng jpeg giflib
+```
+
+## Example
 ```javascript
 const express = require('express');
 const app = express();
