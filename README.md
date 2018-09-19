@@ -36,6 +36,8 @@ const memeGenerator = new memeLib({
 
 app.get('/', function (req, res) {
   memeGenerator.generateMeme({
+      // you can use either topText or bottomText
+      // or both of them at the same time
       topText: 'Meme',
       bottomText: 'Generator',
       url: 'https://i.imgur.com/7FHoSIG.png'
