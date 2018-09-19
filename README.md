@@ -5,6 +5,7 @@ Nodejs promise-based meme generator, it takes an image as url and top/bottom tex
 ```
 $ npm install canvas
 ```
+or
 ```
 $ yarn add canvas
 ```
