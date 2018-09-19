@@ -24,11 +24,11 @@ const PORT = 3001;
 const memeLib = require('nodejs-meme-generator');
 
 const memeGenerator = new memeLib({
-  canvasOptions: {
+  canvasOptions: { // optional
     canvasWidth: 500,
     canvasHeight: 500
   },
-  fontOptions: {
+  fontOptions: { // optional
     fontSize: 50,
     fontFamily: 'impact'
   }
