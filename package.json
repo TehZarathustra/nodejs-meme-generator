@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "canvas": "^1.6.12",
+    "request": "^2.88.0"
+  },
+  "name": "nodejs-meme-generator",
+  "version": "1.0.0",
+  "description": "Nodejs promise-based meme generator, it takes an image as url and top/bottom text to generate meme as Buffer",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nodejs-meme-generator"
+  },
+  "keywords": [
+    "nodejs",
+    "meme",
+    "generator"
+  ],
+  "author": "TehZarathustra",
+  "license": "ISC"
+}
