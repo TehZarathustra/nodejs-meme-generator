@@ -7,7 +7,7 @@ const Canvas = require('canvas');
  * Meme class
  * 
  * @constructor
- * @param {Object} userConfig {canvasOptions}
+ * @param {Object} userConfig {canvasOptions, fontOptions}
  */
 function MemeGenerator (userConfig = {}) {
 	const {canvasOptions, fontOptions} = userConfig;
