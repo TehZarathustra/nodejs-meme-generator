@@ -3,11 +3,11 @@ Nodejs promise-based meme generator, it takes an image as url and top/bottom tex
 
 ## Installation
 ```
-$ npm install canvas
+$ npm install nodejs-meme-generator
 ```
 or
 ```
-$ yarn add canvas
+$ yarn add nodejs-meme-generator
 ```
 
 ## Requirements
