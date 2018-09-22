@@ -127,13 +127,13 @@ MemeGenerator.prototype.drawMeme = function () {
 	if (topText) {
 		y = 0;
 		this.ctx.textBaseline = 'top';
-		wrapText(ctx, topText, x, y, memeWidth, 2, false, fontSize, fontFamily);
+		wrapText(ctx, topText, x, y, memeWidth, 1.5, false, fontSize, fontFamily);
 	}
 
 	if (bottomText) {
 		y = memeHeight;
 		this.ctx.textBaseline = 'bottom';
-		wrapText(ctx, bottomText, x, y, memeWidth, 2, true, fontSize, fontFamily);
+		wrapText(ctx, bottomText, x, y, memeWidth, 1.5, true, fontSize, fontFamily);
 	}
 }
 
@@ -180,13 +180,18 @@ MemeGenerator.prototype.wrapText = function (
 
 	lines[pushMethod](line);
 
-	if (lines.length > 1){
+	if (lines.length > 2) {
 		MemeGenerator.prototype.wrapText(
 			context, text, x, y, maxWidth, lineHeightRatio, fromBottom, fontSize - 10, fontFamily);
 	} else {
 		for (let k in lines) {
-			context.strokeText(lines[k], x, y + lineHeight * k);
-			context.fillText(lines[k], x, y + lineHeight * k);
+			if (fromBottom) {
+				context.strokeText(lines[k], x, y - lineHeight * k);
+				context.fillText(lines[k], x, y - lineHeight * k);
+			} else {
+				context.strokeText(lines[k], x, y + lineHeight * k);
+				context.fillText(lines[k], x, y + lineHeight * k);
+			}
 		}
 	}
 }
