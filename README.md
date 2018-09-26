@@ -29,8 +29,9 @@ const memeGenerator = new memeLib({
     canvasHeight: 500
   },
   fontOptions: { // optional
-    fontSize: 50,
-    fontFamily: 'impact'
+    fontSize: 46,
+    fontFamily: 'impact',
+    lineHeight: 2
   }
 });
 

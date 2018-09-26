@@ -18,7 +18,8 @@ function MemeGenerator (userConfig = {}) {
 		},
 		fontOptions: {
 			fontFamily: 'impact',
-			fontSize: 46
+			fontSize: 46,
+			lineHeight: 2
 		}
 	}, canvasOptions ? {canvasOptions: canvasOptions} : null,
 	fontOptions ? {fontOptions: fontOptions} : null);
@@ -49,13 +50,14 @@ MemeGenerator.prototype.setCanvas = function (options) {
 
 /**
  * 
- * @param {Object} options {fontFamily, fontSize}
+ * @param {Object} options {fontFamily, fontSize, lineHeight}
  */
 MemeGenerator.prototype.setFontOptions = function (options) {
-	const {fontFamily, fontSize} = options;
+	const {fontFamily, fontSize, lineHeight} = options;
 
 	this.fontFamily = fontFamily;
 	this.fontSize = fontSize;
+	this.lineHeight = lineHeight;
 }
 
 /**
@@ -114,6 +116,7 @@ MemeGenerator.prototype.drawMeme = function () {
 		bottomText,
 		fontSize,
 		fontFamily,
+		lineHeight,
 		ctx,
 		wrapText
 	} = this;
@@ -127,13 +130,13 @@ MemeGenerator.prototype.drawMeme = function () {
 	if (topText) {
 		y = 0;
 		this.ctx.textBaseline = 'top';
-		wrapText(ctx, topText, x, y, memeWidth, 1.5, false, fontSize, fontFamily);
+		wrapText(ctx, topText, x, y, memeWidth, lineHeight, false, fontSize, fontFamily);
 	}
 
 	if (bottomText) {
 		y = memeHeight;
 		this.ctx.textBaseline = 'bottom';
-		wrapText(ctx, bottomText, x, y, memeWidth, 1.5, true, fontSize, fontFamily);
+		wrapText(ctx, bottomText, x, y, memeWidth, lineHeight, true, fontSize, fontFamily);
 	}
 }
 
