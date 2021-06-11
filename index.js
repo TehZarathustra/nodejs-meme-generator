@@ -83,7 +83,7 @@ MemeGenerator.prototype.generateMeme = async function (imageOptions, callback) {
 
 MemeGenerator.prototype.calculateCanvasSize = function () {
 	const {canvas} = this;
-	canvas.height = canvas.height / canvas.width* canvas.width;
+	canvas.height = canvas.height / canvas.width * canvas.width;
 	this.memeWidth = canvas.width;
 	this.memeHeight = canvas.height;
 }
