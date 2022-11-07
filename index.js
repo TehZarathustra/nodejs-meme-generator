@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const request = require('request').defaults({encoding: null});
 const Canvas = require('canvas');
 
@@ -82,6 +83,15 @@ MemeGenerator.prototype.generateMeme = function (imageOptions) {
 	this.setImageOptions(imageOptions);
 
 	return new Promise((resolve, reject) => {
+		if (fs.existsSync(this.url)) {
+			this.canvasImg.src = this.url;
+
+			this.calculateCanvasSize();
+			this.drawMeme();
+
+			resolve(this.canvas.toBuffer());
+		}
+		else
 		request.get(this.url, (error, response, body) => {
 			if (!error && response.statusCode === 200) {
 				this.canvasImg.src = new Buffer(body);
