@@ -4,7 +4,7 @@
     "request": "^2.88.0"
   },
   "name": "nodejs-meme-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Nodejs promise-based meme generator, it takes an image as url and top/bottom text to generate meme as Buffer",
   "main": "index.js",
   "devDependencies": {},

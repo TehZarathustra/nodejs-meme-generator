@@ -41,6 +41,7 @@ app.get('/', function (req, res) {
       // or both of them at the same time
       topText: 'Meme',
       bottomText: 'Generator',
+      // for local image you can use path 'img/folder/image.jpg'
       url: 'https://i.imgur.com/7FHoSIG.png'
     })
     .then(function(data) {
@@ -51,4 +52,3 @@ app.get('/', function (req, res) {
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 ```
-The `url` field can be a web link (e.g. `url: 'https://i.imgur.com/7FHoSIG.png'`) or a local image file (e.g. `url: 'img/folder/image.jpg'`)
